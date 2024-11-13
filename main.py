@@ -17,16 +17,18 @@ class PrisonersDilemma:
         print(f"Now we are going to simulate iterated prisoners dilemma for {rounds} rounds where Player A and Player B will randomly choose between cooperate and defect. We are interested in the total accumulated payoffs for both the players.")
         
         total_payoff_a, total_payoff_b = 0, 0
-        strategy_a = random.choice(['cooperate', 'defect'])
-        strategy_b = random.choice(['cooperate', 'defect'])
 
         for _ in range(rounds):
+            strategy_a = random.choice(['cooperate', 'defect'])
+            strategy_b = random.choice(['cooperate', 'defect'])
             payoff_a, payoff_b = self.play_game(strategy_a, strategy_b)
             total_payoff_a += payoff_a
             total_payoff_b += payoff_b
 
         print(f"Total payoff for Player A: {total_payoff_a}")
         print(f"Total payoff for Player B: {total_payoff_b}")
+    
+
 
 
 if __name__ == '__main__':
